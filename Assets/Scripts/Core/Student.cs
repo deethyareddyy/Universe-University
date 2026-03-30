@@ -12,7 +12,8 @@ public class Student {
     public int Diplomacy = 0;
     public int Artistry = 0;
     public int Service = 0;
-    public int extracurriculars;
+    public Dictionary<string, int> extracurriculars = new Dictionary<string, int>();
+
     //public int personality;
 
     // Other traits

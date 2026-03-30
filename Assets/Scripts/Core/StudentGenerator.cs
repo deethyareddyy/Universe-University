@@ -11,10 +11,20 @@ public static class StudentGenerator {
         s.grt_comp = Random.Range(0, 26);
         s.grt_lit = Random.Range(0, 26);
 
-        int amount_of_activites = Random.Range(0, 101);
-        s.extracurriculars = Random.Range(0, 101);
-         // (quantity 1-3)
-// (random score from 5-50)
+        int amount_of_activities = Random.Range(1, 4);
+        HashSet<int> usedIndices = new HashSet<int>();
+
+        for (int i = 0; i < amount_of_activities; i++); {
+            int index;
+            do
+            {
+                int index = Random.Range(0, 15);
+            } while (usedIndices.Contains(index));
+
+            usedIndices.Add(index);
+	        s.extracurriculars.Add(activites[index],Random.Range(0, 51));
+        }
+
 //Athletics (0-2), Robotics (3-5), Diplomacy (6-8), Artistry (9-11), Service (12-14)
 
         s.retentionLikeliness = Random.Range(0, 101); //potentially calculate based on our top
