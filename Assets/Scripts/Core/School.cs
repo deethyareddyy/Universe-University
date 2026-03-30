@@ -40,14 +40,18 @@ public class School {
         if (CanAfford(s.financialNeed)) { //is open check shouldn't be necessary?
             AcceptedStudents.Add(s.name, s);
             Budget += s.financialNeed;
+
+            //how to change based on Activity object??
             Athletics += s.Athletics;
             Robotics += s.Robotics;
             Diplomacy += s.Diplomacy;
             Artistry += s.Artistry;
             Service += s.Service;
+
             CompScoreTot += s.grt_comp;
             LitScoreTot += s.grt_lit;
             RetentionRateTot += s.retentionLikeliness;
+
             CompScore = average(CompScoreTot, AcceptedStudents.Count);
             LitScore = average(LitScoreTot, AcceptedStudents.Count);
             RetentionRate = average(RetentionRateTot, AcceptedStudents.Count);
@@ -57,7 +61,7 @@ public class School {
         }
     }
 
-    public bool TryAcceptStudent(Student s)
+    public bool TryAcceptStudent(Student s) //combine checks with function above
     {
         if (!CanAcceptMore()) return false;
         if (!CanAfford(s.financialNeed)) return false;
