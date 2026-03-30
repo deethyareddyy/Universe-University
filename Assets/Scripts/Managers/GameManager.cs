@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour {
     }
 
     void GenerateStudents() {
-        for (int i = 0; i < school.MaxStudentsPerDay; i++) {
+        for (int i = 0; i < School.MaxStudentsPerDay; i++) {
             todaysStudents.Add(StudentGenerator.Generate());
         }
     }
@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour {
     }
 
     public void AcceptStudent() {
+        if (currentIndex >= todaysStudents.Count) return;
+
         Student s = todaysStudents[currentIndex];
         bool success = school.TryAcceptStudent(s);
 
@@ -37,17 +39,31 @@ public class GameManager : MonoBehaviour {
             return;
         }
 
-        Debug.Log("Accepted!");
+        Debug.Log($"Accepted: {s.name}");
+
+        if (school.NumOfStudents() >= School.MaxAcceptances) {
+            EndDay();
+            return;
+        }
+
         NextStudent();
     }
 
     public void RejectStudent() {
+        if (currentIndex >= todaysStudents.Count) return;
+
         Debug.Log("Rejected!");
         NextStudent();
     }
 
     void NextStudent() {
         currentIndex++;
+
+        if (currentIndex >= todaysStudents.Count) {
+            EndDay();
+            return;
+        }
+
         ShowCurrentStudent();
     }
 
@@ -64,5 +80,9 @@ public class GameManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.R)) {
             RejectStudent();
         }
+    }
+
+    public override string ToString() {
+        return $"{name} | Knowledge: {knowledge}, Personality: {personality}, Need: {financialNeed}";
     }
 }

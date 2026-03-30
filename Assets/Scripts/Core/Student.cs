@@ -12,6 +12,7 @@ public class Student {
     public int Diplomacy = 0;
     public int Artistry = 0;
     public int Service = 0;
+    public int extracurriculars;
     //public int personality;
 
     // Other traits
@@ -20,7 +21,7 @@ public class Student {
 
     public override string ToString() {
         // Change this later depending on what we want to display for a student
-        return $"{Name} | Know:{Knowledge} Ret:{retentionLikeliness}";
+        return $"{name} | Ret:{retentionLikeliness}";
     }
 
     // Scoring function. Change this later
@@ -30,11 +31,9 @@ public class Student {
         score += grt_comp * 2;
         score += grt_lit * 2;
         score += retentionLikeliness;
-        score += extracurriculars;
-        score += personality;
 
         score -= financialNeed;
-        score -= criminalRecord * 2;
+        // score -= criminalRecord * 2;
 
         return score;
     }
