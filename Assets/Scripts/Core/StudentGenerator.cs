@@ -12,24 +12,46 @@ public static class StudentGenerator {
         s.grt_lit = Random.Range(0, 26);
 
         int amount_of_activities = Random.Range(1, 4);
-        HashSet<int> usedIndices = new HashSet<int>();
+        HashSet<string> usedActivites = new HashSet<string>();
 
         for (int i = 0; i < amount_of_activities; i++); {
-            int index;
             do
             {
-                int index = Random.Range(0, 15);
-            } while (usedIndices.Contains(index));
+                int list = Random.Range(0, activities.Count);
+                int index = Random.Range(1, activities[list].Count);
+            } while (usedActivites.Contains(activites[list][index]));
 
-            usedIndices.Add(index);
-	        s.extracurriculars.Add(activites[index],Random.Range(0, 51));
+            Activity temp = new Activity //this way, can use subject to color code or update specific scores
+            {
+                subject = activites[list][0],
+                activity_name = activites[list][index],
+                activity_score = Random.Range(0, 51)
+            };
+            usedActivities.Add(temp.activity_name);
+            s.extracurriculars.Add(temp);
+            switch (temp.subject)
+            {
+                case "Athletics": //could also assign a color here
+                    s.Athletics += temp.activity_score;
+                    break;
+                case "Robotics":
+                    s.Robotics += temp.activity_score;
+                    break;
+                case "Diplomacy":
+                    s.Diplomacy += temp.activity_score;
+                    break;
+                case "Artistry":
+                    s.Artistry += temp.activity_score;
+                    break;
+                case "Service":
+                    s.Service += temp.activity_score;
+                    break;
+            }
         }
 
-//Athletics (0-2), Robotics (3-5), Diplomacy (6-8), Artistry (9-11), Service (12-14)
+        s.retentionLikeliness = Random.Range(0, 101); //eventually calculate based on school's top subjects (need ranking method)
 
-        s.retentionLikeliness = Random.Range(0, 101); //potentially calculate based on our top
-
-        s.financialNeed = Random.Range(0, 101);
+        s.financialNeed = Random.Range(-25000, 30000); //eventually calculate based on being a good or bad student (need classification method)
 
         return s;
     }

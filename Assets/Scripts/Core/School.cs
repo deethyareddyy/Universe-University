@@ -41,7 +41,6 @@ public class School {
             AcceptedStudents.Add(s.name, s);
             Budget += s.financialNeed;
 
-            //how to change based on Activity object??
             Athletics += s.Athletics;
             Robotics += s.Robotics;
             Diplomacy += s.Diplomacy;
@@ -61,7 +60,7 @@ public class School {
         }
     }
 
-    public bool TryAcceptStudent(Student s) //combine checks with function above
+    public bool TryAcceptStudent(Student s) //combine checks with function above?
     {
         if (!CanAcceptMore()) return false;
         if (!CanAfford(s.financialNeed)) return false;
