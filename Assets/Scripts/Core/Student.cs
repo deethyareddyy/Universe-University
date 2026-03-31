@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 public class Student {
     public string name;
 
@@ -12,30 +14,23 @@ public class Student {
     public int Diplomacy = 0;
     public int Artistry = 0;
     public int Service = 0;
-    public Dictionary<string, int> extracurriculars = new Dictionary<string, int>();
-
-    //public int personality;
+    public List<Activity> extracurriculars = new List<Activity>();
 
     // Other traits
-    public int financialNeed;
+    public int financialContribution;
     //public int criminalRecord;
 
     public override string ToString() {
-        // Change this later depending on what we want to display for a student
-        return $"{name} | Ret:{retentionLikeliness}";
-    }
-
-    // Scoring function. Change this later
-    public int GetScore() {
-        int score = 0;
-
-        score += grt_comp * 2;
-        score += grt_lit * 2;
-        score += retentionLikeliness;
-
-        score -= financialNeed;
-        // score -= criminalRecord * 2;
-
-        return score;
+        return
+            $"{name}\n" +
+            $"Retention: {retentionLikeliness}\n" +
+            $"GRT Comp: {grt_comp}\n" +
+            $"GRT Lit: {grt_lit}\n" +
+            $"Financial Contribution: {financialContribution}\n" +
+            $"Athletics: {Athletics}\n" +
+            $"Robotics: {Robotics}\n" +
+            $"Diplomacy: {Diplomacy}\n" +
+            $"Artistry: {Artistry}\n" +
+            $"Service: {Service}";
     }
 }

@@ -1,7 +1,7 @@
-public static class Activity
-{
-    public static List<List<string>> activites = new List<List<string>>()
-    {
+using System.Collections.Generic;
+
+public class Activity {
+    public static List<List<string>> activites = new List<List<string>>() {
         new List<string> {"Athletics", "Spaceball", "Plasma swimming", "Ping pong"},
         new List<string> {"Robotics", "Battle Bots", "Rocket Rumble", "QEX Robotics"},
         new List<string> {"Diplomacy", "United Planets", "Colony management", "Foreign languages"},

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour {
     public School school = new School();
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour {
 
     void Start() {
         GenerateStudents();
+        Debug.Log($"Starting Budget: {school.GetBudget()}");
         ShowCurrentStudent();
     }
 
@@ -27,19 +29,25 @@ public class GameManager : MonoBehaviour {
         Student s = todaysStudents[currentIndex];
         Debug.Log($"Viewing: {s}");
     }
-
+    
     public void AcceptStudent() {
         if (currentIndex >= todaysStudents.Count) return;
 
         Student s = todaysStudents[currentIndex];
-        bool success = school.TryAcceptStudent(s);
+        var result = school.TryAcceptStudent(s);
 
-        if (!success) {
+        if (result == School.AcceptResult.MaxStudentsReached) {
             Debug.Log("You already accepted 3 students!");
             return;
         }
 
+        if (result == School.AcceptResult.CannotAfford) {
+            Debug.Log("You cannot afford this student!");
+            return;
+        }
+
         Debug.Log($"Accepted: {s.name}");
+        Debug.Log($"Remaining Budget: {school.GetBudget()}");
 
         if (school.NumOfStudents() >= School.MaxAcceptances) {
             EndDay();
@@ -53,36 +61,33 @@ public class GameManager : MonoBehaviour {
         if (currentIndex >= todaysStudents.Count) return;
 
         Debug.Log("Rejected!");
+        Debug.Log($"Remaining Budget: {school.GetBudget()}");
+
         NextStudent();
     }
 
     void NextStudent() {
         currentIndex++;
-
         if (currentIndex >= todaysStudents.Count) {
             EndDay();
             return;
         }
-
         ShowCurrentStudent();
     }
 
     void EndDay() {
         Debug.Log("Day finished!");
         Debug.Log($"Accepted: {school.AcceptedStudents.Count}");
+        Debug.Log($"Final Budget: {school.GetBudget()}");
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.A)) {
+        if (Keyboard.current.aKey.wasPressedThisFrame) {
             AcceptStudent();
         }
 
-        if (Input.GetKeyDown(KeyCode.R)) {
+        if (Keyboard.current.rKey.wasPressedThisFrame) {
             RejectStudent();
         }
-    }
-
-    public override string ToString() {
-        return $"{name} | Knowledge: {knowledge}, Personality: {personality}, Need: {financialNeed}";
     }
 }

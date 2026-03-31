@@ -3,13 +3,11 @@ using System;
 using UnityEngine;
 
 public class School {
-
     public bool open = true;
-    private const int MaxStudentsPerDay = 5;
+    public const int MaxStudentsPerDay = 5;
     public static int MaxAcceptances = 3;
 
-    private int StudentsSeen = 0; //make sure to count up when triggering event
-    private int Budget = 50000;
+    private static int Budget = 10000;
     private int CompScore = 0 ;
     private int LitScore = 0;
     private int RetentionRate = 0;
@@ -23,23 +21,24 @@ public class School {
     private int Service = 0;
 
     public Dictionary<string, Student> AcceptedStudents = new Dictionary<string, Student>();
-    private int average(int total_sum, int num_of_students)
-    {
+    private int Average(int total_sum, int num_of_students) {
         if (num_of_students == 0) return 0;
         return total_sum / num_of_students;
     }
     private bool CanAcceptMore() {
         return AcceptedStudents.Count < MaxAcceptances;
     }
+    public int GetBudget() {
+        return Budget;
+    }
 
-    private bool CanAfford(int cost)
-    {
-        return Budget - cost >= 0;
+    private bool CanAfford(int cost) {
+        return Budget + cost >= 0;
     }
     private void AcceptStudent(Student s) {
-        if (CanAfford(s.financialNeed)) { //is open check shouldn't be necessary?
-            AcceptedStudents.Add(s.name, s);
-            Budget += s.financialNeed;
+        if (CanAfford(s.financialContribution)) { // is open check shouldn't be necessary?
+            AcceptedStudents[s.name] = s;
+            Budget += s.financialContribution;
 
             Athletics += s.Athletics;
             Robotics += s.Robotics;
@@ -51,26 +50,29 @@ public class School {
             LitScoreTot += s.grt_lit;
             RetentionRateTot += s.retentionLikeliness;
 
-            CompScore = average(CompScoreTot, AcceptedStudents.Count);
-            LitScore = average(LitScoreTot, AcceptedStudents.Count);
-            RetentionRate = average(RetentionRateTot, AcceptedStudents.Count);
-        } else
-        {
+            CompScore = Average(CompScoreTot, AcceptedStudents.Count);
+            LitScore = Average(LitScoreTot, AcceptedStudents.Count);
+            RetentionRate = Average(RetentionRateTot, AcceptedStudents.Count);
+        } else {
             Debug.Log("You cannot afford to accept this student!");
         }
     }
 
-    public bool TryAcceptStudent(Student s) //combine checks with function above?
-    {
-        if (!CanAcceptMore()) return false;
-        if (!CanAfford(s.financialNeed)) return false;
-
-        AcceptStudent(s);
-        return true;
+    public enum AcceptResult {
+        Success,
+        MaxStudentsReached,
+        CannotAfford
     }
 
-    public int NumOfStudents()
-    {
+    public AcceptResult TryAcceptStudent(Student s) {
+        if (!CanAcceptMore()) return AcceptResult.MaxStudentsReached;
+        if (!CanAfford(s.financialContribution)) return AcceptResult.CannotAfford;
+
+        AcceptStudent(s);
+        return AcceptResult.Success;
+    }
+
+    public int NumOfStudents() {
         return AcceptedStudents.Count;
     }
 }
