@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour {
     public School school = new School();
@@ -9,11 +10,12 @@ public class GameManager : MonoBehaviour {
 
     void Start() {
         GenerateStudents();
+        Debug.Log($"Starting Budget: {school.GetBudget()}");
         ShowCurrentStudent();
     }
 
     void GenerateStudents() {
-        for (int i = 0; i < school.MaxStudentsPerDay; i++) {
+        for (int i = 0; i < School.MaxStudentsPerDay; i++) {
             todaysStudents.Add(StudentGenerator.Generate());
         }
     }
@@ -27,41 +29,64 @@ public class GameManager : MonoBehaviour {
         Student s = todaysStudents[currentIndex];
         Debug.Log($"Viewing: {s}");
     }
-
+    
     public void AcceptStudent() {
-        Student s = todaysStudents[currentIndex];
-        bool success = school.TryAcceptStudent(s);
+        if (currentIndex >= todaysStudents.Count) return;
 
-        if (!success) {
+        Student s = todaysStudents[currentIndex];
+        var result = school.TryAcceptStudent(s);
+
+        if (result == School.AcceptResult.MaxStudentsReached) {
             Debug.Log("You already accepted 3 students!");
             return;
         }
 
-        Debug.Log("Accepted!");
+        if (result == School.AcceptResult.CannotAfford) {
+            Debug.Log("You cannot afford this student!");
+            return;
+        }
+
+        Debug.Log($"Accepted: {s.name}");
+        Debug.Log($"Remaining Budget: {school.GetBudget()}");
+
+        if (school.NumOfStudents() >= School.MaxAcceptances) {
+            EndDay();
+            return;
+        }
+
         NextStudent();
     }
 
     public void RejectStudent() {
+        if (currentIndex >= todaysStudents.Count) return;
+
         Debug.Log("Rejected!");
+        Debug.Log($"Remaining Budget: {school.GetBudget()}");
+
         NextStudent();
     }
 
     void NextStudent() {
         currentIndex++;
+        if (currentIndex >= todaysStudents.Count) {
+            EndDay();
+            return;
+        }
         ShowCurrentStudent();
     }
 
     void EndDay() {
         Debug.Log("Day finished!");
         Debug.Log($"Accepted: {school.AcceptedStudents.Count}");
+        Debug.Log($"Final Budget: {school.GetBudget()}");
     }
 
     void Update() {
-        if (Input.GetKeyDown(KeyCode.A)) {
+        if (Keyboard.current.aKey.wasPressedThisFrame) {
             AcceptStudent();
         }
 
-        if (Input.GetKeyDown(KeyCode.R)) {
+        if (Keyboard.current.rKey.wasPressedThisFrame) {
             RejectStudent();
         }
     }
