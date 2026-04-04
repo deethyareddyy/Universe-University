@@ -50,5 +50,8 @@ TagManager:
   - name: table
     uniqueID: 2526803937
     locked: 0
+  - name: popup
+    uniqueID: 1363016445
+    locked: 0
   m_RenderingLayers:
   - Default
