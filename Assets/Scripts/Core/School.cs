@@ -7,7 +7,7 @@ public class School {
     public const int MaxStudentsPerDay = 5;
     public static int MaxAcceptances = 3;
 
-    private static int Budget = 10000;
+    private static int Budget = 20000;
     private int CompScore = 0 ;
     private int LitScore = 0;
     private int RetentionRate = 0;
