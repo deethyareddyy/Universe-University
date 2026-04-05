@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 public class BudgetPopUpManager : MonoBehaviour
 {
     public UIManager uiManager;
-    private string display_budget = (char)228 + GameManager.Instance.school.GetBudget().ToString();
     // private string display_budget = (char)228 + 2000.ToString();
 
     void Update()
@@ -24,6 +23,7 @@ public class BudgetPopUpManager : MonoBehaviour
 
                 if (uiManager != null)
                 {
+                    string display_budget = "Current budget: " + GameManager.Instance.school.GetBudget().ToString();
                     uiManager.OpenPopUp(display_budget);
                 }
                 else
