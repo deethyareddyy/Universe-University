@@ -23,7 +23,7 @@ public class FilePopUpManager : MonoBehaviour
 
                 if (uiManager != null)
                 {
-                    uiManager.OpenPopUp();
+                    uiManager.OpenPopUp("Students:");
                 }
                 else
                 {

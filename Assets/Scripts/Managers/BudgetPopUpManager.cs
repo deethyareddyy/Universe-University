@@ -22,7 +22,7 @@ public class BudgetPopUpManager : MonoBehaviour
 
                 if (uiManager != null)
                 {
-                    uiManager.OpenPopUp();
+                    uiManager.OpenPopUp("Money money money");
                 }
                 else
                 {
