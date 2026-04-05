@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour
             return;
         }
 
-        Student student = GameManager.Instance.GetCurrentStudent();
+        //Student student = GameManager.Instance.GetCurrentStudent();
         popUpWindow.SetActive(true);
 
         popUpText.text = myData;

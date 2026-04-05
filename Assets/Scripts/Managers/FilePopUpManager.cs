@@ -23,7 +23,11 @@ public class FilePopUpManager : MonoBehaviour
 
                 if (uiManager != null)
                 {
-                    uiManager.OpenPopUp("Students:");
+
+
+                    Student student = GameManager.Instance.GetCurrentStudent();
+                    UIManager.Instance.OpenPopUp(student.ToString());
+
                 }
                 else
                 {
