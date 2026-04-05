@@ -3,24 +3,49 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public GameObject popUpWindow;
-
-    // The text element inside the pop-up
     public TextMeshProUGUI popUpText;
 
-    // Data
-    private string myData = "Current rank: #1";
+    //private Student student = new Student(); // create instance
+    public static UIManager Instance; // Singleton instance
 
-    // Function to open the pop-up and set the text
-    public void OpenPopUp()
+
+    void Awake()
     {
-        popUpWindow.SetActive(true);
-        popUpText.text = myData;
-        Debug.Log("Trying to set text to: " + myData);
+        // Set singleton instance
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject); // avoid duplicates
+        }
     }
 
-    // Function to close the pop-up
+    void Start()
+    {
+        
+    }
+
+    public void OpenPopUp()
+    {
+        if (GameManager.Instance == null)
+    {
+        Debug.LogError("GameManager.Instance is null!");
+        return;
+    }
+
+        Student student = GameManager.Instance.GetCurrentStudent();
+        popUpWindow.SetActive(true);
+
+        string myData = student.ToString(); 
+
+        popUpText.text = myData;
+
+        //Debug.Log("Trying to set text to: " + myData);
+    }
+
     public void ClosePopUp()
     {
         popUpWindow.SetActive(false);

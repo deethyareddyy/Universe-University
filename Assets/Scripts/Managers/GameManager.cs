@@ -7,6 +7,24 @@ public class GameManager : MonoBehaviour {
 
     private List<Student> todaysStudents = new List<Student>();
     private int currentIndex = 0;
+    public static GameManager Instance; // singleton
+
+
+
+    void Awake()
+    {
+        // Set singleton instance
+        if (Instance == null)
+        {
+            Instance = this;
+            // Optional: persist across scenes
+            // DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Start() {
         GenerateStudents();
@@ -28,6 +46,16 @@ public class GameManager : MonoBehaviour {
 
         Student s = todaysStudents[currentIndex];
         Debug.Log($"Viewing: {s}");
+    }
+
+    public Student GetCurrentStudent() {
+        if (currentIndex >= todaysStudents.Count) {
+            EndDay();
+            return null;
+        }
+
+        return todaysStudents[currentIndex];
+        //Debug.Log($"Viewing: {s}");
     }
     
     public void AcceptStudent() {
