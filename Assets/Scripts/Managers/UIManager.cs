@@ -17,29 +17,29 @@ public class UIManager : MonoBehaviour
         {
             Instance = this;
         }
-        else
-        {
-            Destroy(gameObject); // avoid duplicates
-        }
+        // else
+        // {
+        //     Destroy(this); // avoid duplicates
+        // }
     }
 
     void Start()
     {
-        
+
     }
 
     public void OpenPopUp()
     {
         if (GameManager.Instance == null)
-    {
-        Debug.LogError("GameManager.Instance is null!");
-        return;
-    }
+        {
+            Debug.LogError("GameManager.Instance is null!");
+            return;
+        }
 
         Student student = GameManager.Instance.GetCurrentStudent();
         popUpWindow.SetActive(true);
 
-        string myData = student.ToString(); 
+        string myData = student.ToString();
 
         popUpText.text = myData;
 

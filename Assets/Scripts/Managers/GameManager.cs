@@ -2,7 +2,8 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 
-public class GameManager : MonoBehaviour {
+public class GameManager : MonoBehaviour
+{
     public School school = new School();
 
     private List<Student> todaysStudents = new List<Student>();
@@ -20,26 +21,31 @@ public class GameManager : MonoBehaviour {
             // Optional: persist across scenes
             // DontDestroyOnLoad(gameObject);
         }
-        else
-        {
-            Destroy(gameObject);
-        }
+        // else
+        // {
+        //     Destroy(this);
+        // }
     }
 
-    void Start() {
+    void Start()
+    {
         GenerateStudents();
         Debug.Log($"Starting Budget: {school.GetBudget()}");
         ShowCurrentStudent();
     }
 
-    void GenerateStudents() {
-        for (int i = 0; i < School.MaxStudentsPerDay; i++) {
+    void GenerateStudents()
+    {
+        for (int i = 0; i < School.MaxStudentsPerDay; i++)
+        {
             todaysStudents.Add(StudentGenerator.Generate());
         }
     }
 
-    void ShowCurrentStudent() {
-        if (currentIndex >= todaysStudents.Count) {
+    void ShowCurrentStudent()
+    {
+        if (currentIndex >= todaysStudents.Count)
+        {
             EndDay();
             return;
         }
@@ -48,8 +54,10 @@ public class GameManager : MonoBehaviour {
         Debug.Log($"Viewing: {s}");
     }
 
-    public Student GetCurrentStudent() {
-        if (currentIndex >= todaysStudents.Count) {
+    public Student GetCurrentStudent()
+    {
+        if (currentIndex >= todaysStudents.Count)
+        {
             EndDay();
             return null;
         }
@@ -57,19 +65,22 @@ public class GameManager : MonoBehaviour {
         return todaysStudents[currentIndex];
         //Debug.Log($"Viewing: {s}");
     }
-    
-    public void AcceptStudent() {
+
+    public void AcceptStudent()
+    {
         if (currentIndex >= todaysStudents.Count) return;
 
         Student s = todaysStudents[currentIndex];
         var result = school.TryAcceptStudent(s);
 
-        if (result == School.AcceptResult.MaxStudentsReached) {
+        if (result == School.AcceptResult.MaxStudentsReached)
+        {
             Debug.Log("You already accepted 3 students!");
             return;
         }
 
-        if (result == School.AcceptResult.CannotAfford) {
+        if (result == School.AcceptResult.CannotAfford)
+        {
             Debug.Log("You cannot afford this student!");
             return;
         }
@@ -77,7 +88,8 @@ public class GameManager : MonoBehaviour {
         Debug.Log($"Accepted: {s.name}");
         Debug.Log($"Remaining Budget: {school.GetBudget()}");
 
-        if (school.NumOfStudents() >= School.MaxAcceptances) {
+        if (school.NumOfStudents() >= School.MaxAcceptances)
+        {
             EndDay();
             return;
         }
@@ -85,7 +97,8 @@ public class GameManager : MonoBehaviour {
         NextStudent();
     }
 
-    public void RejectStudent() {
+    public void RejectStudent()
+    {
         if (currentIndex >= todaysStudents.Count) return;
 
         Debug.Log("Rejected!");
@@ -94,27 +107,33 @@ public class GameManager : MonoBehaviour {
         NextStudent();
     }
 
-    void NextStudent() {
+    void NextStudent()
+    {
         currentIndex++;
-        if (currentIndex >= todaysStudents.Count) {
+        if (currentIndex >= todaysStudents.Count)
+        {
             EndDay();
             return;
         }
         ShowCurrentStudent();
     }
 
-    void EndDay() {
+    void EndDay()
+    {
         Debug.Log("Day finished!");
         Debug.Log($"Accepted: {school.AcceptedStudents.Count}");
         Debug.Log($"Final Budget: {school.GetBudget()}");
     }
 
-    void Update() {
-        if (Keyboard.current.aKey.wasPressedThisFrame) {
+    void Update()
+    {
+        if (Keyboard.current.aKey.wasPressedThisFrame)
+        {
             AcceptStudent();
         }
 
-        if (Keyboard.current.rKey.wasPressedThisFrame) {
+        if (Keyboard.current.rKey.wasPressedThisFrame)
+        {
             RejectStudent();
         }
     }

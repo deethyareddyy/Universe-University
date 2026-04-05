@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class FilePopUpManager : MonoBehaviour
 {
-public UIManager uiManager;
+    public UIManager uiManager;
 
     void Update()
     {
@@ -20,7 +20,7 @@ public UIManager uiManager;
             if (hit != null && hit.gameObject == this.gameObject)
             {
                 Debug.Log("Clicked on the file");
-                
+
                 if (uiManager != null)
                 {
                     uiManager.OpenPopUp();
