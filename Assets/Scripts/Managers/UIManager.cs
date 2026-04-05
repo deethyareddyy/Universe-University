@@ -39,11 +39,6 @@ public class UIManager : MonoBehaviour
         Student student = GameManager.Instance.GetCurrentStudent();
         popUpWindow.SetActive(true);
 
-<<<<<<< HEAD
-=======
-        string myData = student.ToString();
-
->>>>>>> 6ab1375e9707df66cfd1f271d4720beac706a3f1
         popUpText.text = myData;
 
         //Debug.Log("Trying to set text to: " + myData);
