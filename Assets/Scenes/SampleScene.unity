@@ -579,7 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82ce08df5c16d46d1a6c395bf2e26da2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RankPopUpManager
-  uiManager: {fileID: 0}
+  uiManager: {fileID: 519420033}
 --- !u!1 &383723733
 GameObject:
   m_ObjectHideFlags: 0
