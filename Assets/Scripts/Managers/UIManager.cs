@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
         
     }
 
-    public void OpenPopUp()
+    public void OpenPopUp(string myData)
     {
         if (GameManager.Instance == null)
     {
@@ -38,8 +38,6 @@ public class UIManager : MonoBehaviour
 
         Student student = GameManager.Instance.GetCurrentStudent();
         popUpWindow.SetActive(true);
-
-        string myData = student.ToString(); 
 
         popUpText.text = myData;
 

@@ -5,6 +5,6 @@ public class RankPopUpManager : MonoBehaviour
     public UIManager uiManager; 
     void OnMouseDown() 
     {
-        uiManager.OpenPopUp();
+        uiManager.OpenPopUp("Current rank: #1");
     }
 }

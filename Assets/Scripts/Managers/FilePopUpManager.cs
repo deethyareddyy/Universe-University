@@ -23,7 +23,7 @@ public UIManager uiManager;
                 
                 if (uiManager != null)
                 {
-                    uiManager.OpenPopUp();
+                    uiManager.OpenPopUp("Students:");
                 }
                 else
                 {
