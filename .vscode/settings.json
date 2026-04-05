@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "Universe University.slnx"
+    "dotnet.defaultSolution": "Universe-University.slnx"
 }

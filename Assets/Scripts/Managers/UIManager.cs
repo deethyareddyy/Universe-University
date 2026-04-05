@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     public void OpenPopUp()
     {
         popUpText.text = myData;
+        Debug.Log("Trying to set text to: " + myData);
         popUpWindow.SetActive(true);
     }
 
