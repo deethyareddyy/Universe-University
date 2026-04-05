@@ -4,10 +4,10 @@ using TMPro;
 public class UIManager : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public GameObject popUpWindow; 
-    
+    public GameObject popUpWindow;
+
     // The text element inside the pop-up
-    public TextMeshProUGUI popUpText; 
+    public TextMeshProUGUI popUpText;
 
     // Data
     private string myData = "Current rank: #1";
@@ -15,9 +15,9 @@ public class UIManager : MonoBehaviour
     // Function to open the pop-up and set the text
     public void OpenPopUp()
     {
+        popUpWindow.SetActive(true);
         popUpText.text = myData;
         Debug.Log("Trying to set text to: " + myData);
-        popUpWindow.SetActive(true);
     }
 
     // Function to close the pop-up
