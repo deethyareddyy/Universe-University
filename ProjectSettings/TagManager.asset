@@ -41,6 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: student
+    uniqueID: 1140361855
+    locked: 0
   - name: wall
     uniqueID: 48802005
     locked: 0
