@@ -1,33 +1,58 @@
-using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class WindowManager : MonoBehaviour
 {
-    public GameObject window_close;
-    // Update is called once per frame
-    public bool open = false;
+    public GameObject window;
+    public static WindowManager Instance;
+
+    // If it starts visible, isOpen is true
+    private bool isOpen = true;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
     void Update()
-    {        // 1. Listen for the exact frame the left mouse button is clicked
+    {
         if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             Vector2 mousePosition = Mouse.current.position.ReadValue();
-            Vector3 worldPos3D = Camera.main.ScreenToWorldPoint(new Vector3(mousePosition.x, mousePosition.y, 0));
+            Vector3 worldPos3D = Camera.main.ScreenToWorldPoint(
+                new Vector3(mousePosition.x, mousePosition.y, 0)
+            );
             Vector2 worldPos = new Vector2(worldPos3D.x, worldPos3D.y);
 
             Collider2D hit = Physics2D.OverlapPoint(worldPos);
 
-            if (hit != null && hit.gameObject == this.gameObject && !open)
+            if (hit != null && hit.gameObject == window)
             {
-                Debug.Log("Clicked on the window");
-                window_close.SetActive(false);
-            }
-            else if (hit != null && hit.gameObject == this.gameObject && open)
-            {
-                Debug.Log("Clicked on the window");
-                window_close.SetActive(true);
+                if (isOpen) 
+                {
+                    OpenWindow(); 
+                }
+                else 
+                {
+                    CloseWindow();
+                }
             }
         }
-        
+    }
+
+    // This function makes the window disappear
+    public void OpenWindow()
+    {
+        isOpen = false;
+        window.SetActive(false);
+        Debug.Log("Window opened");
+    }
+
+    // This function makes the window appear
+    public void CloseWindow()
+    {
+        isOpen = true;
+        window.SetActive(true);
+        Debug.Log("Window closed");
     }
 }

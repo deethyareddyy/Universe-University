@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
     private int currentIndex = 0;
     public static GameManager Instance; // singleton
 
-
-
     void Awake()
     {
         // Set singleton instance
@@ -94,6 +92,9 @@ public class GameManager : MonoBehaviour
             return;
         }
 
+        UIManager.Instance.ClosePopUp(); // Hides the file popup
+        WindowManager.Instance.CloseWindow(); // Shows the window background again
+
         NextStudent();
     }
 
@@ -104,6 +105,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Rejected!");
         Debug.Log($"Remaining Budget: {school.GetBudget()}");
 
+        UIManager.Instance.ClosePopUp(); // Hides the file popup
+        WindowManager.Instance.CloseWindow(); // Shows the window background again
+        
         NextStudent();
     }
 
