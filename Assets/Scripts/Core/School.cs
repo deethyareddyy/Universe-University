@@ -65,6 +65,8 @@ public class School
         {
             service_rank = $"(Rank +{Service / threshold}!)";
         }
+        //should be calculated on end day but idk whatever shows up ig
+        OverallRank -= (Athletics + Robotics + Diplomacy + Artistry + Service) / 60 + RetentionRate;
         return
             $"<b>My School Stats:</b>\n\n" +
             $"<u>Overall Rank: {OverallRank}</u>\n" +
@@ -114,8 +116,6 @@ public class School
             CompScore = Average(CompScoreTot, AcceptedStudents.Count);
             LitScore = Average(LitScoreTot, AcceptedStudents.Count);
             RetentionRate = Average(RetentionRateTot, AcceptedStudents.Count);
-            //should be calculated on end day but idk whatever shows up ig
-            OverallRank -= (Athletics + Robotics + Diplomacy + Artistry + Service) / 60 + RetentionRate;
         }
         else
         {

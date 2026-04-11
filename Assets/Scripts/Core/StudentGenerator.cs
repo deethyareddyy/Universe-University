@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 
 public static class StudentGenerator
 {
@@ -15,7 +16,8 @@ public static class StudentGenerator
         {
             Debug.LogError("Portrait pool is empty or missing!");
         }
-        Sprite portrait = PortraitManager.Instance.portraitPool[Random.Range(0, PortraitManager.Instance.portraitPool.Count)];
+        PortraitManager.Instance.Randoming(); 
+        Sprite portrait = PortraitManager.Instance.portraitPool[PortraitManager.Instance.current];
         s.portrait = portrait;
 
         int grt_comp_per = Random.Range(0, 101);
