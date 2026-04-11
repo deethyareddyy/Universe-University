@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System;
 using UnityEngine;
-
+using TMPro;
 public class School
 {
     public bool open = true;
@@ -38,15 +38,28 @@ public class School
 
     public string ReturnStats()
     {
-        return $"Comp Score: {CompScore}\n" +
-               $"Lit Score: {LitScore}\n" +
-               $"Retention Rate: {RetentionRate}\n" +
-               $"Athletics: {Athletics}\n" +
-               $"Robotics: {Robotics}\n" +
-               $"Diplomacy: {Diplomacy}\n" +
-               $"Artistry: {Artistry}\n" +
-               $"Service: {Service}\n" +
-               $"Students Accepted: {AcceptedStudents.Count}";
+        return
+            $"<b>My School Stats:</b>\n\n" +
+            $"Average Galactic Readiness Test (GRT) Score:\n" +
+            $"•  Computational: {School.CompScore}\n" + // Pulls from your School class
+            $"•  Literacy: {School.LitScore}\n\n" +    // Pulls from your Student class
+            $"Specialties:\n" +
+            $"•  Athletics: {School.Athletics}\n" +
+            $"•  Robotics: {School.Robotics}\n" +
+            $"•  Diplomacy: {School.Diplomacy}\n" +
+            $"•  Artistry: {School.Artistry}\n" +
+            $"•  Service: {School.Service}\n\n" +
+            $"Retention Rate: {School.RetentionRate}%\n";
+    
+        // return $"Comp Score: {CompScore}\n" +
+        //        $"Lit Score: {LitScore}\n" +
+        //        $"Retention Rate: {RetentionRate}\n" +
+        //        $"Athletics: {Athletics}\n" +
+        //        $"Robotics: {Robotics}\n" +
+        //        $"Diplomacy: {Diplomacy}\n" +
+        //        $"Artistry: {Artistry}\n" +
+        //        $"Service: {Service}\n" +
+        //        $"Students Accepted: {AcceptedStudents.Count}";
     }
 
     private bool CanAfford(int cost)

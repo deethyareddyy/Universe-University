@@ -83,11 +83,11 @@ public static class StudentGenerator {
             if (fin_per <= 5) s.financialContribution = Random.Range(-25, -19) * 1000;
             else if (fin_per <= 35) s.financialContribution = Random.Range(-19, -9) * 1000;
             else s.financialContribution = Random.Range(-9, 0) * 1000;
-        } else if (fin_per <= 70) {
+        } else if (fin_per <= 75) {
             s.financialContribution = 0;
         } else {
-            if (fin_per <= 85) s.financialContribution = Random.Range(1, 11) * 1000;
-            else if (fin_per <= 95) s.financialContribution = Random.Range(11, 21) * 1000;
+            if (fin_per <= 90) s.financialContribution = Random.Range(1, 11) * 1000;
+            else if (fin_per <= 98) s.financialContribution = Random.Range(11, 21) * 1000;
             else s.financialContribution = Random.Range(21, 31) * 1000;
         }
         return s;
