@@ -1,8 +1,8 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-// using UnityEngine.UI;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
+// using UnityEngine.UIElements;
 
 public class UIManager : MonoBehaviour
 {
