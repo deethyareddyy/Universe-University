@@ -44,25 +44,26 @@ public class School
         string diplomacy_rank = "";
         string artistry_rank = "";
         string service_rank = "";
+        int threshold = 20;
         if (Athletics > 30)
         {
-            athletics_rank = $"(Rank +{Athletics / 30}!)";
+            athletics_rank = $"(Rank +{Athletics / threshold}!)";
         }
         if (Robotics > 30)
         {
-            robotics_rank = $"(Rank +{Robotics / 30}!)";
+            robotics_rank = $"(Rank +{Robotics / threshold}!)";
         }
         if (Diplomacy > 30)
         {
-            diplomacy_rank = $"(Rank +{Diplomacy / 30}!)";
+            diplomacy_rank = $"(Rank +{Diplomacy / threshold}!)";
         }
         if (Artistry > 30)
         {
-            artistry_rank = $"(Rank +{Artistry / 30}!)";
+            artistry_rank = $"(Rank +{Artistry / threshold}!)";
         }
         if (Service > 30)
         {
-            service_rank = $"(Rank +{Service / 30}!)";
+            service_rank = $"(Rank +{Service / threshold}!)";
         }
         // overall_rank -= (Athletics + Robotics + Diplomacy + Artistry + Service) / 60;
         return
