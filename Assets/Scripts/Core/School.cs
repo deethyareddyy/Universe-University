@@ -38,17 +38,22 @@ public class School
 
     public string ReturnStats()
     {
+        string athletics_rank = "";
+        string robotics_rank = "";
+        string diplomacy_rank = "";
+        string artistry_rank = "";
+        string service_rank = "";
         return
             $"<b>My School Stats:</b>\n\n" +
             $"<u>Average GRT Scores:</u>\n" +
             $"•  Computational: {CompScore}\n" + 
             $"•  Literacy: {LitScore}\n\n" +    
             $"<u>Specialties:</u>\n" +
-            $"•  Athletics: {Athletics}\n" +
-            $"•  Robotics: {Robotics}\n" +
-            $"•  Diplomacy: {Diplomacy}\n" +
-            $"•  Artistry: {Artistry}\n" +
-            $"•  Service: {Service}\n\n" +
+            $"•  Athletics: {Athletics} " + athletics_rank + "\n" +
+            $"•  Robotics: {Robotics}" + robotics_rank + "\n" +
+            $"•  Diplomacy: {Diplomacy}" + diplomacy_rank + "\n" +
+            $"•  Artistry: {Artistry}" + artistry_rank + "\n" +
+            $"•  Service: {Service}" + service_rank + "\n" +
             $"<u>Retention Rate:</u> {RetentionRate}%\n";
     
         // return $"Comp Score: {CompScore}\n" +
