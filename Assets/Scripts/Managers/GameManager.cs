@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public School school = new School();
 
     private List<Student> todaysStudents = new List<Student>();
+    public SpriteRenderer studentPortrait;
     private int currentIndex = 0;
     public static GameManager Instance; // singleton
 
@@ -56,8 +57,11 @@ public class GameManager : MonoBehaviour
             EndDay();
             return;
         }
-
         Student s = todaysStudents[currentIndex];
+        if (studentPortrait != null && s.portrait != null)
+        {
+            studentPortrait.sprite = s.portrait;
+        }
         Debug.Log($"Viewing: {s}");
     }
 
