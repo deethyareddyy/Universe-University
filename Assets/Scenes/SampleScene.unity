@@ -414,7 +414,7 @@ MonoBehaviour:
   physicsBlocker: {fileID: 2026655658}
   errorPopUp: {fileID: 1288092803}
   errorText: {fileID: 348339514}
-  errorDisplayTime: 3
+  errorDisplayTime: 2
 --- !u!114 &78945249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: You cannot afford to accept this student!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
@@ -1019,7 +1019,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4278190335
-  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
+  m_fontColor: {r: 0.8584906, g: 0.044544328, b: 0.044544328, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1042,8 +1042,8 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 40
   m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_fontStyle: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2847,8 +2847,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 47.958008, y: -16.189026}
-  m_SizeDelta: {x: -824.085, y: -463.55}
+  m_AnchoredPosition: {x: 7.958008, y: -16.189026}
+  m_SizeDelta: {x: -744.08496, y: -463.55}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1288092805
 MonoBehaviour:
@@ -2863,7 +2863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8396226, g: 0.7960573, b: 0.7960573, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

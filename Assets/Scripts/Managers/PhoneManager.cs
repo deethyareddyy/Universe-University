@@ -13,21 +13,21 @@ public class PhoneManager : MonoBehaviour
 
         "<indent=15%>•  There are <b>5 applicants</b> here today, hoping to be admitted to your school.\n" +
         "•  <b>One-by-one</b>, you will review and either accept or reject each applicant.\n" +
-        "•  The day immediately ends once you <b>admit 3 of them</b>—so choose wisely!</indent>\n\n" +
+        "•  The day immediately ends once you <b>admit 3 of them</b>—so choose wisely!</indent>\n\n";
         
-        "<align=center>To achieve the best possible stats for your school,\n" +
-        "be mindful of what each student brings to the table:</align>\n\n" +
+        // "<align=center>To achieve the best possible stats for your school,\n" +
+        // "be mindful of what each student brings to the table:</align>\n\n" +
         
-        "<indent=15%>•  For the most knowledgeable students, look at their <u>Galactic Readiness Test (GRT) results</u>, with a score <b>(0-25)</b> for both the computational section and the literacy section. An average of your students' scores will be reflected as your school's score.\n\n" +
+        // "<indent=15%>•  For the most knowledgeable students, look at their <u>Galactic Readiness Test (GRT) results</u>, with a score <b>(0-25)</b> for both the computational section and the literacy section. An average of your students' scores will be reflected as your school's score.\n\n" +
         
-        "•  Next, look at what <u>extracurricular activities</u> they are involved in. Each activity belongs to a specialty (<b>Athletics, Robotics, Diplomacy, Artistry, or Service</b>) and shows a proficiency score <b>(0-50)</b>. This score will be added to your school's total for that specialty, helping define your school in whichever speciality you choose to prioritize.\n\n" +
+        // "•  Next, look at what <u>extracurricular activities</u> they are involved in. Each activity belongs to a specialty (<b>Athletics, Robotics, Diplomacy, Artistry, or Service</b>) and shows a proficiency score <b>(0-50)</b>. This score will be added to your school's total for that specialty, helping define your school in whichever speciality you choose to prioritize.\n\n" +
         
-        "•  Then, look at their <u>retention likeliness</u> <b>(0-100%)</b>. You don't want to invest in a student that isn't likely to stay, and it looks bad for your reputation! An average of your student's percentages will be reflected as your school's retention rate.\n\n" +
+        // "•  Then, look at their <u>retention likeliness</u> <b>(0-100%)</b>. You don't want to invest in a student that isn't likely to stay, and it looks bad for your reputation! An average of your student's percentages will be reflected as your school's retention rate.\n\n" +
         
-        "•  Finally, look at their <u>financial contribution</u>. Many students will need financial aid to attend <b>(up to Σ25000)</b>, while a generous few will offer... \"donations\" if you accept them <b>(up to Σ30000)</b>. Your starting budget today is <b>Σ20,000</b>—make sure to stay within budget, or you won't be able to admit any more students!</indent>\n\n" +
+        // "•  Finally, look at their <u>financial contribution</u>. Many students will need financial aid to attend <b>(up to Σ25000)</b>, while a generous few will offer... \"donations\" if you accept them <b>(up to Σ30000)</b>. Your starting budget today is <b>Σ20,000</b>—make sure to stay within budget, or you won't be able to admit any more students!</indent>\n\n" +
         
-        "<align=center>Got it, Headmaster? Best of luck!\n" +
-        "Click on the file folder on your desk to review your next applicant.</align>";
+        // "<align=center>Got it, Headmaster? Best of luck!\n" +
+        // "Click on the file folder on your desk to review your next applicant.</align>";
 
     void Update()
     {
