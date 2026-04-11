@@ -35,25 +35,48 @@ public class School
     {
         return Budget;
     }
-
+    // public  int overall_rank = UnityEngine.Random.Range(1000, 1500);
     public string ReturnStats()
     {
+        //temporary rank algorithm, obviously change it later
         string athletics_rank = "";
         string robotics_rank = "";
         string diplomacy_rank = "";
         string artistry_rank = "";
         string service_rank = "";
+        if (Athletics > 30)
+        {
+            athletics_rank = $"(Rank +{Athletics / 30}!)";
+        }
+        if (Robotics > 30)
+        {
+            robotics_rank = $"(Rank +{Robotics / 30}!)";
+        }
+        if (Diplomacy > 30)
+        {
+            diplomacy_rank = $"(Rank +{Diplomacy / 30}!)";
+        }
+        if (Artistry > 30)
+        {
+            artistry_rank = $"(Rank +{Artistry / 30}!)";
+        }
+        if (Service > 30)
+        {
+            service_rank = $"(Rank +{Service / 30}!)";
+        }
+        // overall_rank -= (Athletics + Robotics + Diplomacy + Artistry + Service) / 60;
         return
             $"<b>My School Stats:</b>\n\n" +
+            // $"<u>Overall Rank: {overall_rank}</u>\n" +
             $"<u>Average GRT Scores:</u>\n" +
             $"•  Computational: {CompScore}\n" + 
             $"•  Literacy: {LitScore}\n\n" +    
             $"<u>Specialties:</u>\n" +
             $"•  Athletics: {Athletics} " + athletics_rank + "\n" +
-            $"•  Robotics: {Robotics}" + robotics_rank + "\n" +
-            $"•  Diplomacy: {Diplomacy}" + diplomacy_rank + "\n" +
-            $"•  Artistry: {Artistry}" + artistry_rank + "\n" +
-            $"•  Service: {Service}" + service_rank + "\n" +
+            $"•  Robotics: {Robotics} " + robotics_rank + "\n" +
+            $"•  Diplomacy: {Diplomacy} " + diplomacy_rank + "\n" +
+            $"•  Artistry: {Artistry} " + artistry_rank + "\n" +
+            $"•  Service: {Service} " + service_rank + "\n" +
             $"<u>Retention Rate:</u> {RetentionRate}%\n";
     
         // return $"Comp Score: {CompScore}\n" +
