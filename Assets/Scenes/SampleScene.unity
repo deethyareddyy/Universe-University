@@ -334,9 +334,8 @@ MonoBehaviour:
   popUpText: {fileID: 322899181}
   endDayPanel: {fileID: 563657295}
   endDayStatsText: {fileID: 2061201547}
-  backgroundBlocker: {fileID: 936124512}
-  physicsBlocker: {fileID: 2026655658}
-  errorPopUp: {fileID: 0}
+  backgroundBlocker: {fileID: 0}
+  physicsBlocker: {fileID: 0}
   errorText: {fileID: 348339514}
   errorDisplayTime: 3
 --- !u!114 &78945249
@@ -775,7 +774,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &348339514
 MonoBehaviour:
   m_ObjectHideFlags: 0
