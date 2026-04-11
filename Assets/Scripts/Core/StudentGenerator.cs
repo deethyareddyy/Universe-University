@@ -9,6 +9,8 @@ public static class StudentGenerator {
         string last = Names.lastNames[Random.Range(0, Names.lastNames.Count)];
         s.name = first + " " + last;
 
+        portrait = portrait_pool[Random.Range(0, portrait_pool.Count)];
+
         int grt_comp_per = Random.Range(0, 101);
         if (grt_comp_per <= 20) {
             s.grt_comp = Random.Range(0, 11);
