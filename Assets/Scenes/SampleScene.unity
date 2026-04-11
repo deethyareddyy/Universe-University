@@ -220,6 +220,7 @@ GameObject:
   m_Component:
   - component: {fileID: 78945247}
   - component: {fileID: 78945248}
+  - component: {fileID: 78945249}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -256,6 +257,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UIManager
   popUpWindow: {fileID: 1941055812}
   popUpText: {fileID: 322899181}
+--- !u!114 &78945249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 78945246}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d02627a5f5941d88193f9a1f5a3d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WindowManager
+  window: {fileID: 619145444}
 --- !u!1 &147670604
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,7 +989,6 @@ GameObject:
   - component: {fileID: 619145447}
   - component: {fileID: 619145446}
   - component: {fileID: 619145445}
-  - component: {fileID: 619145448}
   m_Layer: 0
   m_Name: window_close_0
   m_TagString: Untagged
@@ -1093,20 +1106,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &619145448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 619145444}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14d02627a5f5941d88193f9a1f5a3d5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  window_close: {fileID: 619145444}
-  open: 0
 --- !u!1 &643050151
 GameObject:
   m_ObjectHideFlags: 0

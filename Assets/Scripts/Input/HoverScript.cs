@@ -25,7 +25,7 @@ public class HoverScript : MonoBehaviour
 
         if (nextHoverObj != null)
         {
-            SetColor(nextHoverObj, Color.red);
+            SetColor(nextHoverObj, Color.yellowGreen);
             if (previousHoverObj != null && nextHoverObj && previousHoverObj != nextHoverObj)
             {
                 SetColor(previousHoverObj, Color.white);
