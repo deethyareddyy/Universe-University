@@ -41,13 +41,11 @@ public class GameManager : MonoBehaviour
         Debug.Log($"Starting Budget: {school.GetBudget()}");
         ShowCurrentStudent();
     }
-
-    public Portraits port;
     void GenerateStudents()
     {
         for (int i = 0; i < School.MaxStudentsPerDay; i++)
         {
-            todaysStudents.Add(StudentGenerator.Generate(port));
+            todaysStudents.Add(StudentGenerator.Generate());
         }
     }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 public static class StudentGenerator
 {
-    public static Student Generate(Portraits port)
+    public static Student Generate()
     {
         Student s = new Student();
 
