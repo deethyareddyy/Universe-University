@@ -144,7 +144,6 @@ public class GameManager : MonoBehaviour
                          // Add more here
         
         UIManager.Instance.ShowEndDayReport(summary);
-        UIManager.Instance.ClosePopUp();
     }
 
     void Update()

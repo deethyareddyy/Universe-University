@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class UIManager : MonoBehaviour
     [Header("End Day Settings")]
     public GameObject endDayPanel; // The background panel for the summary
     public TextMeshProUGUI endDayStatsText; // The text to display stats
+    public Button closeButton;
     
     [Header("Error Settings")]
     public TextMeshProUGUI errorText; // Assign error message
@@ -42,6 +44,11 @@ public class UIManager : MonoBehaviour
     {
         endDayPanel.SetActive(true);
         endDayStatsText.text = stats;
+    }
+    public void CloseEndDayReport()
+    {
+        endDayPanel.SetActive(false);
+        Debug.Log("End day panel closed");
     }
 
     public void OpenPopUp(string myData)
