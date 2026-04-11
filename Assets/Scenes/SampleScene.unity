@@ -1105,8 +1105,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d02627a5f5941d88193f9a1f5a3d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  window_close: {fileID: 619145444}
-  open: 0
+  window: {fileID: 0}
 --- !u!1 &643050151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1321,6 +1320,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0b7541caa7c428eb4283f7edb8a3e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  portraitRenderer: {fileID: 1779703421}
+  port: {fileID: 1970476166}
 --- !u!1 &908638141
 GameObject:
   m_ObjectHideFlags: 0
@@ -3377,6 +3378,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1941055812}
   m_CullTransparentMesh: 1
+--- !u!1 &1970476164
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1970476165}
+  - component: {fileID: 1970476166}
+  m_Layer: 0
+  m_Name: Portraits
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1970476165
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970476164}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1970476166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970476164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f6a284af486d22469df5001c6bd3372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Portraits
+  portrait_pool:
+  - {fileID: -2945154151030625061, guid: 070376420764e4daf93d99ad72fd7ede, type: 3}
+  - {fileID: 21300000, guid: fb01b25b28c074fbdb8f08c5665bebc7, type: 3}
+  - {fileID: -6287357518761064441, guid: ad10d088cb8da4567af16f3fc6858bb2, type: 3}
+  - {fileID: 8581363780399802525, guid: 689357d532f5f49019829ad8eabc2050, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3401,3 +3451,4 @@ SceneRoots:
   - {fileID: 78945247}
   - {fileID: 619145447}
   - {fileID: 1779703422}
+  - {fileID: 1970476165}
