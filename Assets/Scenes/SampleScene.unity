@@ -336,6 +336,7 @@ MonoBehaviour:
   endDayStatsText: {fileID: 2061201547}
   backgroundBlocker: {fileID: 936124512}
   physicsBlocker: {fileID: 2026655658}
+  errorPopUp: {fileID: 0}
   errorText: {fileID: 348339514}
   errorDisplayTime: 3
 --- !u!114 &78945249
@@ -774,7 +775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &348339514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -798,13 +799,13 @@ MonoBehaviour:
   m_text: New Text
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190335
   m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -822,11 +823,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 44.75
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 30
+  m_fontSizeMin: 40
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
@@ -882,16 +883,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348339513}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1469501438}
+  m_Father: {fileID: 582646245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3.66, y: 82.771}
+  m_AnchoredPosition: {x: -0.000016689, y: -0.000038147}
   m_SizeDelta: {x: 862.164, y: 215.541}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &383723733
@@ -2393,12 +2394,13 @@ MonoBehaviour:
   portraitPool:
   - {fileID: 4751538272481436488, guid: eaa8bec60305de84fbd542af1c2eed86, type: 3}
   - {fileID: 3508692392892821057, guid: 2eeca5d2b72fabc42ae9256dda3c7e94, type: 3}
-  - {fileID: -6887679268143041786, guid: 8fe6f5509293f4d4cb14e35ccd3528f8, type: 3}
+  - {fileID: 21300000, guid: 8fe6f5509293f4d4cb14e35ccd3528f8, type: 3}
   - {fileID: -3996171202503308902, guid: 44ee20af944a5b34591399ea8f815556, type: 3}
   - {fileID: 5208798721111502479, guid: 9c4a7c55889428a45a4e5367d3da8419, type: 3}
-  - {fileID: -8112064941971173603, guid: 4f81b60a901d77048a93bc4f02fcd2ee, type: 3}
+  - {fileID: 21300000, guid: 4f81b60a901d77048a93bc4f02fcd2ee, type: 3}
   - {fileID: 6164685972789591876, guid: dc2e21ce7e8377d49b68bf7913229ac9, type: 3}
   - {fileID: 1600999967738735821, guid: a21dbef117e99f144a268d838727b71b, type: 3}
+  - {fileID: -7822000356056459451, guid: ee9c74e79cc4efe4cb048bb6e2e129e8, type: 3}
 --- !u!4 &1276347475
 Transform:
   m_ObjectHideFlags: 0
@@ -2602,7 +2604,7 @@ RectTransform:
   - {fileID: 936124513}
   - {fileID: 1941055813}
   - {fileID: 563657296}
-  - {fileID: 348339516}
+  - {fileID: 582646245}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
