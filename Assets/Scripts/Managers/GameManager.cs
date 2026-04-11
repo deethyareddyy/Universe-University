@@ -38,6 +38,8 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
+        //not sure if this is the right place to call it
+        school.OverallRank = UnityEngine.Random.Range(1000, 1500);
         GenerateStudents();
         Debug.Log($"Starting Budget: {school.GetBudget()}");
         ShowCurrentStudent();

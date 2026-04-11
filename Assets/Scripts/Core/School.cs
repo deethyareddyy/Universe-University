@@ -20,6 +20,7 @@ public class School
     private int Diplomacy = 0;
     private int Artistry = 0;
     private int Service = 0;
+    public int OverallRank = 1500;
 
     public Dictionary<string, Student> AcceptedStudents = new Dictionary<string, Student>();
     private int Average(int total_sum, int num_of_students)
@@ -35,7 +36,6 @@ public class School
     {
         return Budget;
     }
-    // public  int overall_rank = UnityEngine.Random.Range(1000, 1500);
     public string ReturnStats()
     {
         //temporary rank algorithm, obviously change it later
@@ -45,30 +45,29 @@ public class School
         string artistry_rank = "";
         string service_rank = "";
         int threshold = 20;
-        if (Athletics > 30)
+        if (Athletics > threshold)
         {
             athletics_rank = $"(Rank +{Athletics / threshold}!)";
         }
-        if (Robotics > 30)
+        if (Robotics > threshold)
         {
             robotics_rank = $"(Rank +{Robotics / threshold}!)";
         }
-        if (Diplomacy > 30)
+        if (Diplomacy > threshold)
         {
             diplomacy_rank = $"(Rank +{Diplomacy / threshold}!)";
         }
-        if (Artistry > 30)
+        if (Artistry > threshold)
         {
             artistry_rank = $"(Rank +{Artistry / threshold}!)";
         }
-        if (Service > 30)
+        if (Service > threshold)
         {
             service_rank = $"(Rank +{Service / threshold}!)";
         }
-        // overall_rank -= (Athletics + Robotics + Diplomacy + Artistry + Service) / 60;
         return
             $"<b>My School Stats:</b>\n\n" +
-            // $"<u>Overall Rank: {overall_rank}</u>\n" +
+            $"<u>Overall Rank: {OverallRank}</u>\n" +
             $"<u>Average GRT Scores:</u>\n" +
             $"•  Computational: {CompScore}\n" + 
             $"•  Literacy: {LitScore}\n\n" +    
@@ -115,6 +114,8 @@ public class School
             CompScore = Average(CompScoreTot, AcceptedStudents.Count);
             LitScore = Average(LitScoreTot, AcceptedStudents.Count);
             RetentionRate = Average(RetentionRateTot, AcceptedStudents.Count);
+            //should be calculated on end day but idk whatever shows up ig
+            OverallRank -= (Athletics + Robotics + Diplomacy + Artistry + Service) / 60 + RetentionRate;
         }
         else
         {
