@@ -8,7 +8,7 @@ public class School
     public const int MaxStudentsPerDay = 5;
     public static int MaxAcceptances = 3;
 
-    private static int Budget = 20000;
+    public static int Budget = 20000;
     private int CompScore = 0;
     private int LitScore = 0;
     private int RetentionRate = 0;
@@ -40,16 +40,16 @@ public class School
     {
         return
             $"<b>My School Stats:</b>\n\n" +
-            $"Average Galactic Readiness Test (GRT) Score:\n" +
-            $"•  Computational: {School.CompScore}\n" + // Pulls from your School class
-            $"•  Literacy: {School.LitScore}\n\n" +    // Pulls from your Student class
+            $"Average GRT Scores:\n" +
+            $"•  Computational: {CompScore}\n" + 
+            $"•  Literacy: {LitScore}\n\n" +    
             $"Specialties:\n" +
-            $"•  Athletics: {School.Athletics}\n" +
-            $"•  Robotics: {School.Robotics}\n" +
-            $"•  Diplomacy: {School.Diplomacy}\n" +
-            $"•  Artistry: {School.Artistry}\n" +
-            $"•  Service: {School.Service}\n\n" +
-            $"Retention Rate: {School.RetentionRate}%\n";
+            $"•  Athletics: {Athletics}\n" +
+            $"•  Robotics: {Robotics}\n" +
+            $"•  Diplomacy: {Diplomacy}\n" +
+            $"•  Artistry: {Artistry}\n" +
+            $"•  Service: {Service}\n\n" +
+            $"Retention Rate: {RetentionRate}%\n";
     
         // return $"Comp Score: {CompScore}\n" +
         //        $"Lit Score: {LitScore}\n" +

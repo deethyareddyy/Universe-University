@@ -35,7 +35,7 @@ public class Student {
     {
         string formattedProfile = $"<b>{student.name}'s profile:</b>\n\n" +
             $"Galactic Readiness Test (GRT)\n" +
-            $"• Computational score: {student.grt_com}\n" +
+            $"• Computational score: {student.grt_comp}\n" +
             $"• Literacy score: {student.grt_lit}\n\n" +
             $"Extracurriculars:\n";
 
