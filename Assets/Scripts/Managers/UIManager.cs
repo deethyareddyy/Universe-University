@@ -16,6 +16,7 @@ public class UIManager : MonoBehaviour
     public GameObject backgroundBlocker;
     public GameObject physicsBlocker;
     [Header("Error Settings")]
+    public GameObject errorPopUp;
     public TextMeshProUGUI errorText; // Assign error message
     public float errorDisplayTime = 3f;
 
@@ -35,11 +36,11 @@ public class UIManager : MonoBehaviour
     private IEnumerator ErrorSequence(string message)
     {
         errorText.text = message;
-        errorText.gameObject.SetActive(true);
+        errorPopUp.SetActive(true);
 
         yield return new WaitForSeconds(errorDisplayTime);
 
-        errorText.gameObject.SetActive(false);
+        errorPopUp.SetActive(false);
     }
 
     public void ShowEndDayReport(string stats)

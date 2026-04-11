@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 4f81b60a901d77048a93bc4f02fcd2ee
+guid: 7321865b2648f4edfaf06d0cfea72210
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8112064941971173603
-    second: alien6-removebg-preview_0
-  - first:
-      213: -7068908601992294319
-    second: alien6-removebg-preview_1
-  - first:
-      213: 5583547854439116421
-    second: alien6-removebg-preview_2
-  - first:
-      213: -1515473302580656323
-    second: alien6-removebg-preview_3
+      213: 694652577363433838
+    second: png (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -122,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: alien6-removebg-preview_0
+      name: png (1)_0
       rect:
         serializedVersion: 2
-        x: 119
-        y: 223
-        width: 82
-        height: 73
+        x: 0
+        y: 0
+        width: 1586
+        height: 907
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,74 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d1f88e23ae72c6f80800000000000000
-      internalID: -8112064941971173603
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: alien6-removebg-preview_1
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 250
-        width: 261
-        height: 105
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 150db84441136ed90800000000000000
-      internalID: -7068908601992294319
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: alien6-removebg-preview_2
-      rect:
-        serializedVersion: 2
-        x: 508
-        y: 231
-        width: 74
-        height: 73
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 58eec32d03fbc7d40800000000000000
-      internalID: 5583547854439116421
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: alien6-removebg-preview_3
-      rect:
-        serializedVersion: 2
-        x: 188
-        y: 126
-        width: 339
-        height: 108
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d3787158f05f7fae0800000000000000
-      internalID: -1515473302580656323
+      spriteID: e699e04b6d6e3a900800000000000000
+      internalID: 694652577363433838
       vertices: []
       indices: 
       edges: []
@@ -213,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -223,10 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      alien6-removebg-preview_0: -8112064941971173603
-      alien6-removebg-preview_1: -7068908601992294319
-      alien6-removebg-preview_2: 5583547854439116421
-      alien6-removebg-preview_3: -1515473302580656323
+      png (1)_0: 694652577363433838
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
