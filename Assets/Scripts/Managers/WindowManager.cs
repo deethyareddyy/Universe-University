@@ -3,15 +3,29 @@ using UnityEngine.InputSystem;
 
 public class WindowManager : MonoBehaviour
 {
-    public GameObject window;
     public static WindowManager Instance;
 
-    // If it starts visible, isOpen is true
+    public GameObject window;
+    private SpriteRenderer windowRenderer;
     private bool isOpen = true;
 
     void Awake()
     {
+        // Simple Singleton pattern
+        if (Instance != null && Instance != this) 
+        { 
+            Destroy(gameObject); 
+            return; 
+        }
         Instance = this;
+    }
+
+    void Start()
+    {
+        if (window != null)
+        {
+            windowRenderer = window.GetComponent<SpriteRenderer>();
+        }
     }
 
     void Update()
@@ -20,39 +34,39 @@ public class WindowManager : MonoBehaviour
         {
             Vector2 mousePosition = Mouse.current.position.ReadValue();
             Vector3 worldPos3D = Camera.main.ScreenToWorldPoint(
-                new Vector3(mousePosition.x, mousePosition.y, 0)
+                new Vector3(mousePosition.x, mousePosition.y, Camera.main.nearClipPlane)
             );
+            
             Vector2 worldPos = new Vector2(worldPos3D.x, worldPos3D.y);
 
             Collider2D hit = Physics2D.OverlapPoint(worldPos);
 
+            // If we clicked the window's collider
             if (hit != null && hit.gameObject == window)
             {
                 if (isOpen) 
                 {
-                    OpenWindow(); 
+                    CloseWindow(); 
                 }
                 else 
                 {
-                    CloseWindow();
+                    OpenWindow();
                 }
             }
         }
     }
 
-    // This function makes the window disappear
     public void OpenWindow()
     {
-        isOpen = false;
-        window.SetActive(false);
+        isOpen = true;
+        if (windowRenderer != null) windowRenderer.enabled = true;
         Debug.Log("Window opened");
     }
 
-    // This function makes the window appear
     public void CloseWindow()
     {
-        isOpen = true;
-        window.SetActive(true);
+        isOpen = false;
+        if (windowRenderer != null) windowRenderer.enabled = false;
         Debug.Log("Window closed");
     }
 }
