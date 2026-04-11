@@ -26,26 +26,29 @@ public class Student {
 
     private string GetFinancialStatus(int amount)
     {
-        if (amount < 0) return $"<color=red>Need: {amount}</color>";
-        if (amount > 0) return $"<color=green>Donate: {amount}</color>";
-        return "<color=grey>None</color>";
+        if (amount < 0) return $"(Need) {amount}";
+        if (amount > 0) return $"(Donation) {amount}";
+        return "None";
+        // if (amount < 0) return $"<color=red>(Need) {amount}</color>";
+        // if (amount > 0) return $"<color=green>(Donation) {amount}</color>";
+        // return "<color=grey>None</color>";
     }
 
-    public string PrintProfile(Student student)
+    public string PrintProfile()
     {
-        string formattedProfile = $"<b>{student.name}'s profile:</b>\n\n" +
-            $"Galactic Readiness Test (GRT)\n" +
-            $"• Computational score: {student.grt_comp}\n" +
-            $"• Literacy score: {student.grt_lit}\n\n" +
-            $"Extracurriculars:\n";
+        string formattedProfile = $"<b>{name}'s Profile:</b>\n\n" +
+            $"<u>Galactic Readiness Test (GRT):</u>\n" +
+            $"• Computational score: {grt_comp}\n" +
+            $"• Literacy score: {grt_lit}\n\n" +
+            $"<u>Extracurriculars:</u>\n";
 
-        foreach (var act in student.extracurriculars)
+        foreach (var act in extracurriculars)
         {
-            formattedProfile += $"• {act.activity_name}: {act.activity_score} ({act.subject})\n";
+            formattedProfile += $"• {act.activity_name} ({act.subject}): {act.activity_score}\n";
         }
 
-        formattedProfile += $"\nRetention Likeliness: {student.retentionLikeliness}%\n\n" +
-            $"Financial Contribution: {GetFinancialStatus(student.financialContribution)}";
+        formattedProfile += $"\n<u>Retention Likeliness:</u> {retentionLikeliness}%\n\n" +
+            $"<u>Financial Contribution:</u> {GetFinancialStatus(financialContribution)}";
 
         return formattedProfile;
     }

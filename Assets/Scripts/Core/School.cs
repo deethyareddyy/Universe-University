@@ -40,16 +40,16 @@ public class School
     {
         return
             $"<b>My School Stats:</b>\n\n" +
-            $"Average GRT Scores:\n" +
+            $"<u>Average GRT Scores:</u>\n" +
             $"•  Computational: {CompScore}\n" + 
             $"•  Literacy: {LitScore}\n\n" +    
-            $"Specialties:\n" +
+            $"<u>Specialties:</u>\n" +
             $"•  Athletics: {Athletics}\n" +
             $"•  Robotics: {Robotics}\n" +
             $"•  Diplomacy: {Diplomacy}\n" +
             $"•  Artistry: {Artistry}\n" +
             $"•  Service: {Service}\n\n" +
-            $"Retention Rate: {RetentionRate}%\n";
+            $"<u>Retention Rate:</u> {RetentionRate}%\n";
     
         // return $"Comp Score: {CompScore}\n" +
         //        $"Lit Score: {LitScore}\n" +

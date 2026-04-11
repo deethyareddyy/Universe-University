@@ -8,8 +8,9 @@ public class PhoneManager : MonoBehaviour
     // private string display_budget = (char)228 + 2000.ToString();
 
     public const string guide = 
-        "<align=center><color=#999999>(click on the intergalactic phone on your desk to view this guide anytime)</color></align>\n\n" +
-        
+        "<align=center>Welcome to Universe University!\n" +
+        "<align=center>It’s your first day as headmaster, so let’s run through your duties:\n" +
+
         "<indent=15%>•  There are <b>5 applicants</b> here today, hoping to be admitted to your school.\n" +
         "•  <b>One-by-one</b>, you will review and either accept or reject each applicant.\n" +
         "•  The day immediately ends once you <b>admit 3 of them</b>—so choose wisely!</indent>\n\n" +
@@ -26,7 +27,7 @@ public class PhoneManager : MonoBehaviour
         "•  Finally, look at their <u>financial contribution</u>. Many students will need financial aid to attend <b>(up to Σ25000)</b>, while a generous few will offer... \"donations\" if you accept them <b>(up to Σ30000)</b>. Your starting budget today is <b>Σ20,000</b>—make sure to stay within budget, or you won't be able to admit any more students!</indent>\n\n" +
         
         "<align=center>Got it, Headmaster? Best of luck!\n" +
-        "Click on the file folder on your desk to review your first applicant.</align>";
+        "Click on the file folder on your desk to review your next applicant.</align>";
 
     void Update()
     {
