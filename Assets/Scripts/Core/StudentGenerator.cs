@@ -9,7 +9,11 @@ public static class StudentGenerator {
         string last = Names.lastNames[Random.Range(0, Names.lastNames.Count)];
         s.name = first + " " + last;
 
-        portrait = portrait_pool[Random.Range(0, portrait_pool.Count)];
+        if (PortraitManager.Instance == null || PortraitManager.Instance.portraitPool.Count == 0)
+        {
+            Debug.LogError("Portrait pool is empty or missing!");
+        }
+        Sprite portrait = PortraitManager.Instance.portraitPool[Random.Range(0, PortraitManager.Instance.portraitPool.Count)];
 
         int grt_comp_per = Random.Range(0, 101);
         if (grt_comp_per <= 20) {
