@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using UnityEngine;
 
 public class Student {
     public string name;
+    public Sprite portrait;
 
     // Galactic Readiness Test (0-25)
     public int grt_comp;
@@ -22,10 +24,11 @@ public class Student {
 
     public override string ToString() {
         return
-            $"{name}\n" +
-            $"Retention: {retentionLikeliness}\n" +
+            $"{name}'s profile:\n\n" + //bolded
+            $"Galactic Readiness Test (GRT)\n" +
             $"GRT Comp: {grt_comp}\n" +
-            $"GRT Lit: {grt_lit}\n" +
+            $"GRT Lit: {grt_lit}\n\n" +
+            $"Retention Likeliness: {retentionLikeliness}\n" +
             $"Financial Contribution: {financialContribution}\n" +
             $"Athletics: {Athletics}\n" +
             $"Robotics: {Robotics}\n" +
