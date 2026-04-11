@@ -71,7 +71,6 @@ public class GameManager : MonoBehaviour
         }
 
         return todaysStudents[currentIndex];
-        //Debug.Log($"Viewing: {s}");
     }
 
     public void AcceptStudent()
@@ -83,27 +82,28 @@ public class GameManager : MonoBehaviour
 
         if (result == School.AcceptResult.MaxStudentsReached)
         {
-            Debug.Log("You already accepted 3 students!");
+            UIManager.Instance.ShowErrorMessage("You already accepted 3 students!");
+            EndDay();
             return;
         }
 
         if (result == School.AcceptResult.CannotAfford)
         {
-            Debug.Log("You cannot afford this student!");
+            UIManager.Instance.ShowErrorMessage("You cannot afford this student!");
             return;
         }
 
         Debug.Log($"Accepted: {s.name}");
-        Debug.Log($"Remaining Budget: {school.GetBudget()}");
+        
+        UIManager.Instance.ClosePopUp(); 
+        WindowManager.Instance.CloseWindow(); 
 
         if (school.NumOfStudents() >= School.MaxAcceptances)
         {
+            Debug.Log("School full! Ending day early.");
             EndDay();
             return;
         }
-
-        UIManager.Instance.ClosePopUp(); // Hides the file popup
-        WindowManager.Instance.CloseWindow(); // Shows the window background again
 
         NextStudent();
     }
@@ -124,19 +124,28 @@ public class GameManager : MonoBehaviour
     void NextStudent()
     {
         currentIndex++;
+        
         if (currentIndex >= todaysStudents.Count)
         {
             EndDay();
-            return;
         }
-        ShowCurrentStudent();
+        else
+        {
+            ShowCurrentStudent();
+        }
     }
 
     void EndDay()
     {
         Debug.Log("Day finished!");
-        Debug.Log($"Accepted: {school.AcceptedStudents.Count}");
-        Debug.Log($"Final Budget: {school.GetBudget()}");
+        
+        string summary = "DAY FINISHED!\n\n" +
+                         $"Students Accepted: {school.AcceptedStudents.Count}\n" +
+                         $"Final Budget: {school.GetBudget()}\n";
+                         // Add more here
+        
+        UIManager.Instance.ShowEndDayReport(summary);
+        UIManager.Instance.ClosePopUp();
     }
 
     void Update()
