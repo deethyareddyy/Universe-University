@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class BudgetPopUpManager : MonoBehaviour
 {
@@ -23,7 +24,8 @@ public class BudgetPopUpManager : MonoBehaviour
 
                 if (uiManager != null)
                 {
-                    string display_budget = "Current budget: " + GameManager.Instance.school.GetBudget().ToString();
+                    string display_budget = $"<b>Current Budget:</b>\n" + $"\u03A3 {School.Budget}"; 
+                    //string display_budget = "Current Budget: " + GameManager.Instance.school.GetBudget().ToString();
                     uiManager.OpenPopUp(display_budget);
                 }
                 else
