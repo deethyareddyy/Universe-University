@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     private int currentIndex = 0;
     public static GameManager Instance; // singleton
 
+
+    public SpriteRenderer portraitRenderer; // drag the GameObject in Inspector
     void Awake()
     {
         // Set singleton instance
@@ -23,6 +25,14 @@ public class GameManager : MonoBehaviour
         // {
         //     Destroy(this);
         // }
+
+
+        if (GameManager.Instance == null)  // ← add this
+        {
+            Debug.LogWarning("GameManager instance is null!");
+            return;
+        }
+
     }
 
     void Start()
@@ -32,11 +42,12 @@ public class GameManager : MonoBehaviour
         ShowCurrentStudent();
     }
 
+    public Portraits port;
     void GenerateStudents()
     {
         for (int i = 0; i < School.MaxStudentsPerDay; i++)
         {
-            todaysStudents.Add(StudentGenerator.Generate());
+            todaysStudents.Add(StudentGenerator.Generate(port));
         }
     }
 
@@ -49,6 +60,7 @@ public class GameManager : MonoBehaviour
         }
 
         Student s = todaysStudents[currentIndex];
+        portraitRenderer.sprite = s.portrait;
         Debug.Log($"Viewing: {s}");
     }
 
@@ -107,7 +119,7 @@ public class GameManager : MonoBehaviour
 
         UIManager.Instance.ClosePopUp(); // Hides the file popup
         WindowManager.Instance.CloseWindow(); // Shows the window background again
-        
+
         NextStudent();
     }
 
