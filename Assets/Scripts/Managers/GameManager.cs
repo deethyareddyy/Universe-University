@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance; // singleton
 
 
-    public SpriteRenderer portraitRenderer; // drag the GameObject in Inspector
+    // public SpriteRenderer portraitRenderer; // drag the GameObject in Inspector
     void Awake()
     {
         // Set singleton instance
@@ -58,7 +58,6 @@ public class GameManager : MonoBehaviour
         }
 
         Student s = todaysStudents[currentIndex];
-        portraitRenderer.sprite = s.portrait;
         Debug.Log($"Viewing: {s}");
     }
 

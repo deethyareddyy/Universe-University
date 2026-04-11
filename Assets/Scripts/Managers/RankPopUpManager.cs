@@ -23,11 +23,7 @@ public class RankPopUpManager : MonoBehaviour
 
                 if (uiManager != null)
                 {
-
-
                     UIManager.Instance.OpenPopUp(GameManager.Instance.school.ReturnStats());
-
-
                 }
                 else
                 {
